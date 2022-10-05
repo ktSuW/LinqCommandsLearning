@@ -4,6 +4,10 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using LinqCommandsLearning.MethodSyntax;
+using LinqCommandsLearning.DataTypesPetVet;
+using LinqCommandsLearning.Exercises;
+using System.Drawing.Printing;
+using Microsoft.Graph;
 
 namespace LinqTutorial
 {
@@ -150,9 +154,75 @@ namespace LinqTutorial
              *  METHOD SYNTAX
              */
             //============ ANY ==============
-            Any.Run();
+            //Any.Run();
 
+            //=============== All =====================================
+            //var numbers = new[] { 5, 9, 2, 12, 6 };
+            //var areAllLargerThanZero = numbers.All(n => n > 0);
+            ////Printer.Print(areAllLargerThanZero, nameof(areAllLargerThanZero));
 
+            //var pets = new[]
+            //{
+            //    new Pet(1, "Hannibal", PetType.Fish, 1.1f),
+            //    new Pet(2, "Anthony", PetType.Cat, 2f),
+            //    new Pet(3, "Ed", PetType.Cat, 0.7f),
+            //    new Pet(4, "Taiga", PetType.Dog, 35f),
+            //    new Pet(5, "Rex", PetType.Dog, 40f),
+            //    new Pet(6, "Lucky", PetType.Dog, 5f),
+            //    new Pet(7, "Storm", PetType.Cat, 0.9f)
+            //};
+            //var doAllHaveNonEmptyNames = pets.All(pet => !string.IsNullOrEmpty(pet.Name));
+            //Console.WriteLine("doAllHaveNonEmptyNames " , doAllHaveNonEmptyNames);
+
+            //=============== All =====================================
+
+            //var numbers = new[] { 5, 9, 2, 12, 6 };
+            //var areAllLargerThanZero = numbers.All(n => n > 0);
+            ////Printer.Print(areAllLargerThanZero, nameof(areAllLargerThanZero));
+
+            //var pets = new[]
+            //{
+            //    new Pet(1, "Hannibal", PetType.Fish, 1.1f),
+            //    new Pet(2, "Anthony", PetType.Cat, 2f),
+            //    new Pet(3, "Ed", PetType.Cat, 0.7f),
+            //    new Pet(4, "Taiga", PetType.Dog, 35f),
+            //    new Pet(5, "Rex", PetType.Dog, 40f),
+            //    new Pet(6, "Lucky", PetType.Dog, 5f),
+            //    new Pet(7, "Storm", PetType.Cat, 0.9f)
+            //};
+
+            //====================== Count =================================
+            //var countOfDogs = pets.Count(pet => pet.PetType == PetType.Dog);
+            //Console.WriteLine("Numbers of dog is " +  countOfDogs);
+            //var countOfPetNameBruce = pets.Count(pet => pet.Name == "Bruce");
+            //Console.WriteLine(countOfPetNameBruce);
+
+            //var countOfDogsSmallerThan10Kg = pets.Count(pet => pet.PetType == PetType.Dog && pet.Weight < 10);
+            //Console.WriteLine("Small dogs numbers " + countOfDogsSmallerThan10Kg);
+
+            //======================== Contains =================================
+
+            var numbers = new[] { 16,8, 9, -1, 2 };
+            bool is7Present = numbers.Contains(7);
+            global::System.Console.WriteLine("7 is present in the numbers : " + is7Present);
+
+            var words = new[] { "lion", "tiger", "snow leopard" };
+            bool isTigerPresent = words.Contains("tiger");
+            
+
+            var pets = new[]
+            {
+                new Pet(1, "Hannibal", PetType.Fish, 1.1f),
+                new Pet(2, "Anthony", PetType.Cat, 2f),
+                new Pet(3, "Ed", PetType.Cat, 0.7f),
+                new Pet(4, "Taiga", PetType.Dog, 35f),
+                new Pet(5, "Rex", PetType.Dog, 40f),
+                new Pet(6, "Lucky", PetType.Dog, 5f),
+                new Pet(7, "Storm", PetType.Cat, 0.9f)
+            };
+            var hannibal = pets[0];
+            bool isHannibalPresent = pets.Contains(hannibal);
+            Console.WriteLine("Hannibal is present " + isHannibalPresent);
 
 
             Console.ReadKey();
